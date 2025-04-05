@@ -4,10 +4,18 @@
 	email = rutabageldev@users.noreply.github.com
 	name = rutabageldev
 
+# TODO: Replace hardcoded paths with dynamic logic in bootstrap script
+
+# TODO: Conver back to env:GIT_PLATFORM logice once reliable across platforms
+
 # Load platform-specific Git config
-[includeIf "env:GIT_PLATFORM=WSL"]
-	path = ~/projects/dev-setup/dotfiles/wsl/.gitconfig-wsl
+#[includeIf "env:GIT_PLATFORM=WSL"]
+#	path = /home/rutabageldev/projects/dev-setup/dotfiles/wsl/.gitconfig-wsl
+#
+#[includeIf "env:GIT_PLATFORM=LINUX"]
+#	path = /home/rutabageldev/projects/dev-setup/dotfiles/linux/.gitconfig-linux
 
-[includeIf "env:GIT_PLATFORM=LINUX"]
-	path =~/projects/dev-setup/dotfiles/linux/.gitconfig-linux
-
+[includeIf "gitdir:/home/rutabageldev/projects/"]
+	path = /home/rutabageldev/projects/dev-setup/dotfiles/wsl/.gitconfig-wsl
+[custom]
+	platform = LINUX

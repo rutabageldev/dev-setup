@@ -117,8 +117,10 @@ export WORKON_HOME=~/.virtualenvs
 # Load platform-specific overrides
 if grep -q Microsoft /proc/version 2>/dev/null; then
     export GIT_PLATFORM=WSL
+    git config --global custom.platform "WSL"
     source ~/projects/dev-setup/dotfiles/wsl/.zshrc-wsl
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export GIT_PLATFORM=LINUX
+    git config --global custom.platform "LINUX"
     source ~/projects/dev-setup/dotfiles/linux/.zshrc-linux
 fi

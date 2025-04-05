@@ -3,3 +3,7 @@
 [user]
 	email = rutabageldev@users.noreply.github.com
 	name = rutabageldev
+
+[custom]
+	platform = LINUX
+	debug = it worked!
