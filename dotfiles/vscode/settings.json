@@ -1,0 +1,25 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "editor.fontFamily": "'IBM Plex Mono', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 22,
+
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "terminal.integrated.fontFamily": "'IBM Plex Mono', monospace",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+
+  "breadcrumbs.enabled": true,
+  "explorer.confirmDelete": false
+}

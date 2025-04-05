@@ -1,0 +1,12 @@
+[
+    {
+      "key": "ctrl+shift+t",
+      "command": "workbench.action.terminal.new",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+alt+f",
+      "command": "editor.action.formatDocument",
+      "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+    }
+  ]

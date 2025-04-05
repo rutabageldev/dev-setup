@@ -3,3 +3,11 @@
 [user]
 	email = rutabageldev@users.noreply.github.com
 	name = rutabageldev
+
+# Load platform-specific Git config
+[includeIf "env:GIT_PLATFORM=WSL"]
+	path = ~/projects/dev-setup/dotfiles/wsl/.gitconfig-wsl
+
+[includeIf "env:GIT_PLATFORM=LINUX"]
+	path =~/projects/dev-setup/dotfiles/linux/.gitconfig-linux
+
