@@ -3,7 +3,7 @@ import sys
 import os
 from dotenv import load_dotenv
 
-load_dotenv
+load_dotenv()
 
 class ColorFormatter(logging.Formatter):
     COLORS = {
@@ -24,7 +24,12 @@ def get_logger(name: str) -> logging.Logger:
     logger =logging.getLogger(name)
     if not logger.handlers:
         handler = logging.StreamHandler(sys.stdout)
-        formatter = ColorFormatter("[%(levelname)s] %(name)s: %(message)s")
+        
+        formatter = ColorFormatter(
+            "[%(asctime)s] [%(levelname)s] %(name)s: %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S"
+            )
+        
         handler.setFormatter(formatter)
         logger.addHandler(handler)
         logger.setLevel(logging.INFO)
