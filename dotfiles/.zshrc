@@ -109,7 +109,7 @@ alias ll='ls -lah'
 alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m'
-alias gp='git push'
+alias gp='git push -u origin main'
 
 # Python virtual env auto-activate (optional)
 export WORKON_HOME=~/.virtualenvs
@@ -124,3 +124,13 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     git config --global custom.platform "LINUX"
     source ~/projects/dev-setup/dotfiles/linux/.zshrc-linux
 fi
+
+function venv-launch() {
+    local venv_path="./.venv/bin/activate"
+    if [[ -f "$venv_path" ]]; then
+        source "$venv_path"
+        echo "✅ Activated virtual environment at $venv_path"
+    else
+        echo "❌ No .venv found in $(pwd)"
+    fi
+} 
