@@ -1,5 +1,9 @@
 import logging
 import sys
+import os
+from dotenv import load_dotenv
+
+load_dotenv
 
 class ColorFormatter(logging.Formatter):
     COLORS = {
@@ -24,4 +28,9 @@ def get_logger(name: str) -> logging.Logger:
         handler.setFormatter(formatter)
         logger.addHandler(handler)
         logger.setLevel(logging.INFO)
+
+        # 🔥 Dynamically set log level based on LOG_LEVEL in .env
+        level_name = os.getenv("LOG_LEVEL", "INFO").upper()
+        level = getattr(logging, level_name, logging.INFO)
+        logger.setLevel(level)
     return logger
