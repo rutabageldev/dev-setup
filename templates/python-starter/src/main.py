@@ -7,7 +7,11 @@ logger = get_logger(__name__)
 
 def main():
     app_name = os.getenv("APP_NAME", "Unnamed App")
-    logger.info("Hello from the starter template!")
+    logger.debug("Debug-level log")
+    logger.info("Info-level log")
+    logger.warning("Warning-level log")
+    logger.error("Error-level log")
+    logger.critical("Critical-level log")
 
 if __name__ == "__main__":
     main()
