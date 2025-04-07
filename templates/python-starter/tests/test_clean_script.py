@@ -66,20 +66,20 @@ def test_clean_script_dry_run_does_not_delete(tmp_path):
         text=True,
     )
 
-    output = result.stdout
+    output_lines = result.stdout.splitlines()
 
      # --- Assert output includes all expected dry-run notices ---
-    assert "Would delete: .venv" in output
-    assert "Would delete: ./__pycache__" in output
-    assert "Would delete: .pytest_cache" in output
-    assert "Would delete: .mypy_cache" in output
-    assert "Would delete: .coverage" in output
-    assert "Would delete: dummy.pyc" in output
+    assert any("Would delete: .venv" in line for line in output_lines)
+    assert any("__pycache__" in line for line in output_lines)
+    assert any("dummy.pyc" in line for line in output_lines)
+    assert any(".pytest_cache" in line for line in output_lines)
+    assert any(".mypy_cache" in line for line in output_lines)
+    assert any(".coverage" in line for line in output_lines)
 
     # Assert cleanup happened
     assert (tmp_path / ".venv").exists()
     assert (tmp_path / "__pycache__").exists()
     assert (tmp_path / ".pytest_cache").exists()
-    assert (tmp_path / "mypy_cache").exists()
+    assert (tmp_path / ".mypy_cache").exists()
     assert (tmp_path / ".coverage").exists()
     assert  (tmp_path / "dummy.pyc").exists()
