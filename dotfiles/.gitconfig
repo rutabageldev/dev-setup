@@ -19,3 +19,5 @@
 	path = /home/rutabageldev/projects/dev-setup/dotfiles/wsl/.gitconfig-wsl
 [custom]
 	platform = LINUX
+[push]
+	autoSetupRemote = true
