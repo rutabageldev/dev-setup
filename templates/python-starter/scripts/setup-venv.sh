@@ -30,7 +30,12 @@ else
     exit 1
 fi
 
+# === 4. Run Coverage report ===
 echo "📊 Running coverage report..."
 pytest --cov=src --cov-report=term
+
+# === 5. Install pre-commit hooks ===
+echo "🔧 Installing pre-commit hooks..."
+pre-commit install
 
 echo "🎉 Environment ready. Activate with: source .venv/bin/activate"
